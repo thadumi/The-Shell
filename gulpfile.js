@@ -29,7 +29,16 @@ function styles() {
 }
 
 function jses() {
-    return gulp.src('src/js/**/*.js')
+    return gulp.src([
+            'src/js/libs/jquery.min.js',
+            'src/js/libs/jquery.fitvids.js',
+            'src/js/libs/jquery.history.js',
+            'src/js/libs/highlight.pack.js',
+            'src/js/libs/nprogress.js',
+            'src/js/libs/jquery.ghosthunter.js',
+
+            'src/js/script.js'
+        ])
         .pipe(concat('script.js'))
         .pipe(uglify())
         .pipe(gulp.dest('assets/js'))
