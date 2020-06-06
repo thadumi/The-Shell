@@ -17,7 +17,7 @@ function reload() {
 }
 
 function styles() {
-    return gulp.src('assets/scss/screen.scss')
+    return gulp.src('src/scss/screen.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(sourcemaps.write())
@@ -35,7 +35,8 @@ function release() {
         '**',
         '!node_modules', '!node_modules/**',
         '!dist', '!dist/**',
-        '!assets/scss', '!assets/scss/**'
+        '!assets/scss', '!assets/scss/**',
+        '!src', '!src/**'
     ])
         .pipe(zip(filename))
         .pipe(gulp.dest(targetDir));
