@@ -5,6 +5,8 @@ const { watch } = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
 const zip = require('gulp-zip');
 const sass = require('gulp-sass');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
 const browserSync = require("browser-sync").create();
 
 sass.compiler = require('node-sass');
@@ -23,6 +25,14 @@ function styles() {
         .pipe(sourcemaps.write())
         .pipe(autoprefixer({browsers: ['last 2 versions']}))
         .pipe(gulp.dest('assets/css/'))
+        .pipe(browserSync.stream());
+}
+
+function jses() {
+    return gulp.src('src/js/**/*.js')
+        .pipe(concat('script.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('assets/js'))
         .pipe(browserSync.stream());
 }
 
@@ -47,8 +57,10 @@ function watchFiles() {
         proxy: "localhost:2368"
     });
 
-    watch(['assets/scss/**/*.scss'], styles);
+    watch(['src/scss/**/*.scss'], styles);
     watch(['**/*.hbs'], styles);
+    watch(['src/**/*.js'], jses);
+
 }
 
 
