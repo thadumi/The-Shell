@@ -34,10 +34,9 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/mityalebedev/The-Shell.git"
+        "url": "https://github.com/thadumi/ghost-shell-theme.git"
     },
-    "bugs": "https://github.com/mityalebedev/The-Shell/issues",
-    "contributors": "https://github.com/mityalebedev/The-Shell/graphs/contributors",
+    "bugs": "https://github.com/thadumi/ghost-shell-theme/issues",
     "devDependencies": {
         "browser-sync": "^2.26.3",
         "gulp": "^4.0.0",
