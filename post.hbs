@@ -94,39 +94,22 @@
         post.fitVids();
 
         // Format code blocks and add line numbers
-        function addSourceLineNumbers(e) {
-            var
-                prefix = 'prefix',
-                l = 1,
-                result = e.innerHTML.replace(/\n/g, function () {
-                    l++;
-                    return "\n" + '<a class="line" name="' + prefix + l + '">' + l + '</a>';
-                })
-                ;
-
-            e.innerHTML = '<a class="line" name="' + prefix + '0">1</a>' + result;
+        function addSourceLineNumbers(code) {
+            let lines = code.html().split(/\n(?!$)/g).length;
+            let numbers = [];
+            if (lines > 1) {
+                lines++;
+            }
+            for (i = 1; i < lines; i++) {
+                numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+            }
+            code.parent().append('<div class="lines">' + numbers + '</div>');            
         }
-
 
         function codestyling() {
             $('pre code').each(function (i, e) {
                 hljs.highlightBlock(e);
-                addSourceLineNumbers(e);
-
-                // No lines for plain text blocks
-                /*if (!$(this).hasClass('language-text')) {
-                    let code = $(this);
-                    // Calculate amount of lines
-                    let lines = code.html().split(/\n(?!$)/g).length;
-                    let numbers = [];
-                    if (lines > 1) {
-                        lines++;
-                    }
-                    for (i = 1; i < lines; i++) {
-                        numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
-                    }
-                    code.parent().append('<div class="lines">' + numbers + '</div>');
-                }*/
+                addSourceLineNumbers($(this));
             });
         }
         codestyling();
