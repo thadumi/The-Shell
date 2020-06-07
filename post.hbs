@@ -14,10 +14,10 @@
         {{! Each post has the blog logo at the top, with a link back to the home page }}
         <header class="post-header">
             <a id="blog-logo" href="{{@site.url}}">
-                {{#if @site.logo}}
+                    {{#if @site.logo}}
                 <img src="{{@site.logo}}" alt="Blog Logo" />
                 {{else}}
-                {{@site.title}}
+                    {{@site.title}}
                 {{/if}}
             </a>
             <!--div class="inner">
@@ -40,10 +40,10 @@
 
         <footer class="post-footer">
             {{#if tags}}
-            <aside class="post-tags">
-                <span class="post-info-label">{{t "Topic"}}</span>
-                {{tags separator=" "}}
-            </aside>
+                <aside class="post-tags">
+                    <span class="post-info-label">{{t "Topic"}}</span>
+                    {{tags separator=" "}}
+                </aside>
             {{/if}}
 
             <div class="post-share">
@@ -67,7 +67,7 @@
                     <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
                 </a>
             </div>
-            
+
             <!--
             {{#if primary_author}}
             <section class="author">
