@@ -14,10 +14,10 @@
         {{! Each post has the blog logo at the top, with a link back to the home page }}
         <header class="post-header">
             <a id="blog-logo" href="{{@site.url}}">
-                    {{#if @site.logo}}
+                {{#if @site.logo}}
                 <img src="{{@site.logo}}" alt="Blog Logo" />
                 {{else}}
-                    {{@site.title}}
+                {{@site.title}}
                 {{/if}}
             </a>
             <!--div class="inner">
@@ -28,48 +28,48 @@
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
-            {{! Everything below outputs content of the the post which has been published }}
-            <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
-                {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
+        {{! Everything below outputs content of the the post which has been published }}
+        <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
+            {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
 
-            <h1 class="post-title">{{{title}}}</h1>
+        <h1 class="post-title">{{{title}}}</h1>
 
-            <section class="post-content">
-                {{content}}
-            </section>
-            
-            {{#if post}}
-                <footer class="post-footer">
-                    {{#if tags}}
-                        <aside class="post-tags">
-                            <span class="post-info-label">{{t "Topic"}}</span>
-                            {{tags separator=" "}}
-                        </aside>
-                    {{/if}}
+        <section class="post-content">
+            {{content}}
+        </section>
 
-                    
-                        <div class="post-share">
-                            <span class="post-info-label">{{t "Share"}}</span>
-                            <a title="Twitter" class="twitter"
-                                href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
-                                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                                <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
-                            </a>
-                            <a title="Facebook" class="facebook"
-                                href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                                <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
-                            </a>
-                            <a title="LinkedIn" class="linkedin"
-                                href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}/&amp;title={{title}}"
-                                onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
-                                <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
-                            </a>
-                            <a title="Email" class="email" href="mailto:?subject={{title}}&amp;body={{url absolute="true"}}">
-                                <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
-                            </a>
-                        </div>
-                    <!--
+        {{#if post}}
+        <footer class="post-footer">
+            {{#if tags}}
+            <aside class="post-tags">
+                <span class="post-info-label">{{t "Topic"}}</span>
+                {{tags separator=" "}}
+            </aside>
+            {{/if}}
+
+
+            <div class="post-share">
+                <span class="post-info-label">{{t "Share"}}</span>
+                <a title="Twitter" class="twitter"
+                    href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+                </a>
+                <a title="Facebook" class="facebook"
+                    href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+                </a>
+                <a title="LinkedIn" class="linkedin"
+                    href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}/&amp;title={{title}}"
+                    onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                    <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+                </a>
+                <a title="Email" class="email" href="mailto:?subject={{title}}&amp;body={{url absolute="true"}}">
+                    <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+                </a>
+            </div>
+            <!--
                     {{#if primary_author}}
                     <section class="author">
                         <h4>{{primary_author.name}}</h4>
@@ -77,8 +77,8 @@
                     </section>
                     {{/if}}
                     -->
-                </footer>
-            {{/if}}
+        </footer>
+        {{/if}}
         {{/post}}
 
     </article>
@@ -92,13 +92,29 @@
         let post = $('.post-content');
         // Responsive videos with fitVids
         post.fitVids();
+
         // Format code blocks and add line numbers
+        function addSourceLineNumbers(e) {
+            var
+                prefix = 'prefix',
+                l = 1,
+                result = e.innerHTML.replace(/\n/g, function () {
+                    l++;
+                    return "\n" + '<a class="line" name="' + prefix + l + '">' + l + '</a>';
+                })
+                ;
+
+            e.innerHTML = '<a class="line" name="' + prefix + '0">1</a>' + result;
+        }
+
+
         function codestyling() {
             $('pre code').each(function (i, e) {
-                // Code highlight
                 hljs.highlightBlock(e);
+                addSourceLineNumbers(e);
+
                 // No lines for plain text blocks
-                if (!$(this).hasClass('language-text')) {
+                /*if (!$(this).hasClass('language-text')) {
                     let code = $(this);
                     // Calculate amount of lines
                     let lines = code.html().split(/\n(?!$)/g).length;
@@ -110,7 +126,7 @@
                         numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
                     }
                     code.parent().append('<div class="lines">' + numbers + '</div>');
-                }
+                }*/
             });
         }
         codestyling();
