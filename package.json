@@ -1,7 +1,7 @@
 {
     "name": "the-shell",
     "description": "Theme for Ghost which use 'Ghost in The Shell' animation series palette colors",
-    "demo": "https://ghostintheshell.ghost.io",
+    "demo": "thadumi.com",
     "version": "3.0.0",
     "engines": {
         "ghost": ">=3.0.0",
@@ -17,9 +17,8 @@
         "test": "gscan ."
     },
     "author": {
-        "name": "Dmitry Lebedev",
-        "email": "mityalebedev@me.com",
-        "url": "https://github.com/mityalebedev"
+        "name": "Theodor Augustin Dumitrescu",
+        "url": "https://github.com/thadumi"
     },
     "gpm": {
         "type": "theme",
@@ -46,10 +45,11 @@
         "gulp-concat": "^2.6.1",
         "gulp-sass": "^4.0.2",
         "gulp-sourcemaps": "^2.6.4",
-        "gulp-uglify": "^3.0.2",
+        "gulp-terser": "^1.2.0",
         "gulp-zip": "^4.2.0"
     },
     "config": {
         "posts_per_page": 5
-    }
+    },
+    "dependencies": {}
 }

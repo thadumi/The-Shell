@@ -5,7 +5,7 @@ const { watch } = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
 const zip = require('gulp-zip');
 const sass = require('gulp-sass');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 const concat = require('gulp-concat');
 const browserSync = require("browser-sync").create();
 
@@ -40,7 +40,7 @@ function jses() {
             'src/js/script.js'
         ])
         .pipe(concat('script.js'))
-        .pipe(uglify())
+        .pipe(terser())
         .pipe(gulp.dest('assets/js'))
         .pipe(browserSync.stream());
 }
