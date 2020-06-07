@@ -20,11 +20,11 @@
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 
-    <script>
-        var ghosthunter_key = '59cb0dbadd408dda8baef24d19';
+    <!--script>
+        var ghosthunter_key = '';
         //optional: set your custom ghost_root url, default is "/ghost/api/v2"
         var ghost_root_url = '/ghost/api/v2';
-    </script>
+    </script-->
 </head>
 
 <body class="{{body_class}}">
@@ -34,9 +34,10 @@
             {{navigation}}
 
             <ul class="nav-side">
-                <li class="nav-twitter"><a aria-label="Twitter" href="" target="_blank"><i class="icon icon-twitter"
-                            aria-hidden="true"></i></a></li>
-                <li class="nav-search" style=""><a title="Search"><i class="icon icon-search"
+                {{#if @site.twitter}}
+                    <li class="nav-twitter"><a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter" aria-hidden="true"></i></a></li>
+				{{/if}}
+                <li class="nav-search" style="display: none;"><a title="Search"><i class="icon icon-search"
                             aria-hidden="true"></i></a></li>
             </ul>
         </nav>
