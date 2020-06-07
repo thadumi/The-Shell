@@ -16,7 +16,7 @@
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-
+    <link rel="stylesheet" type="text/css" href="{{asset "css/atom-one-dark.css"}}">
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 
@@ -35,8 +35,9 @@
 
             <ul class="nav-side">
                 {{#if @site.twitter}}
-                    <li class="nav-twitter"><a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter" aria-hidden="true"></i></a></li>
-				{{/if}}
+                <li class="nav-twitter"><a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}"
+                        target="_blank"><i class="icon icon-twitter" aria-hidden="true"></i></a></li>
+                {{/if}}
                 <li class="nav-search" style="display: none;"><a title="Search"><i class="icon icon-search"
                             aria-hidden="true"></i></a></li>
             </ul>
@@ -82,7 +83,6 @@
                         class="icon-ghost-text">Ghost</span></a></section>
         </div>
     </footer>
-
 
     <script type="text/javascript" src="{{asset "js/script.js"}}"></script>
 
