@@ -1,0 +1,42 @@
+{{!< default}}
+
+
+<main class="content" role="main">
+  <article class="{{post_class}}" style="border-bottom: none;">
+    <header class="post-header">
+      <a id="blog-logo" href="{{@site.url}}">
+        {{#if @site.logo}}
+        <img src="{{@site.logo}}" alt="Blog Logo" />
+        {{else}}
+        {{@site.title}}
+        {{/if}}
+      </a>
+    </header>
+  </article>
+
+  {{#get 'tags' limit='all' include='count.posts'}}
+  {{#foreach tags}}
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <span class="post-meta">{{ count.posts }} posts</span>
+                <h2 class="post-title"><a href="{{url}}">{{{name}}}</a></h2>
+            </header>
+            <section class="post-excerpt">
+                <p>{{description}}</p>
+            </section>
+        </article>
+    {{/foreach}}
+    {{/get}}
+</main>
+
+<!--main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    {{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+    {{#foreach tags}}
+        <a href='{{ url }}'>
+        <h2>{{ name }} <small>({{ count.posts }})</small></h2>
+        </a>
+    {{/foreach}}
+    {{/get}}
+  </div>
+</main-->
