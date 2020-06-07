@@ -3,6 +3,9 @@ jQuery(function($) {
 
     var html = $('html');  
     var viewport = $(window);
+    var current = $('.nav-current');
+
+    current.addClass('active');
 
     /* ==========================================================================
      Menu
@@ -32,13 +35,12 @@ jQuery(function($) {
 
     viewport.on({
         'resize': function() {
-            html.removeClass('menu-active');
+            current.removeClass('menu-active');
         },
         'orientationchange': function() {
-            html.removeClass('menu-active');
+            current.removeClass('menu-active');
         }
-    });
-    
+    });    
     
     
     /* ==========================================================================

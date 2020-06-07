@@ -201,7 +201,7 @@
       padding: 0 1rem;
       margin-left: -1rem;
       margin-top: -2rem;
-      background: $color-primary;
+      background: #bf6165;
       @media only screen and (max-width: $breakpoint-medium) {
         left: 0;
         top: 50%;
@@ -215,14 +215,8 @@
     }
 
     a {
-      color: $color-neutral-25;
-      font-weight: 500;
-      @media (prefers-color-scheme: dark) {
-        color: $color-neutral-90;
-      }
-      @media only screen and (max-width: $breakpoint-medium) {
-        color: #fff;
-      }
+      color: #bf6165;
+      font-weight: 500;    
     }
   }
 
@@ -258,13 +252,7 @@
 
     &:focus,
     &:hover {
-      color: $color-neutral-25;
-      @media (prefers-color-scheme: dark) {
-        color: $color-neutral-90;
-      }
-      @media only screen and (max-width: $breakpoint-medium) {
-        color: $color-neutral-80;
-      }
+      color: #bf6165;
     }
   }
 
@@ -295,28 +283,8 @@
 
     &:focus,
     &:hover {
-      color: #fff;
+      color:#bf6165;
     }
   }
 
-  .nav-header li {
-    a {
-      @media only screen and (min-width: $breakpoint-medium) {
-        color: rgba(255, 255, 255, 0.8);
-      }
-
-      &:focus,
-      &:hover {
-        @media only screen and (min-width: $breakpoint-medium) {
-          color: #fff;
-        }
-      }
-    }
-
-    &.active a {
-      @media only screen and (min-width: $breakpoint-medium) {
-        color: #fff;
-      }
-    }
-  }
 }
