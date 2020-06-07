@@ -58,6 +58,8 @@ jQuery(function($) {
           html.addClass('search-active');
           searchField.focus();
           html.removeClass('menu-active');
+
+          $('.progress-bar').css('display', 'none');
         }
       });
   
@@ -66,6 +68,8 @@ jQuery(function($) {
           html.removeClass('search-active');
           searchField.val('');
           $('#results').empty();
+
+          $('.progress-bar').css('display', '');
         }
       });
   
@@ -75,6 +79,8 @@ jQuery(function($) {
             html.removeClass('search-active');
             searchField.val('');
             $('#results').empty();
+
+            $('.progress-bar').css('display', '');
           }
         }
       });
