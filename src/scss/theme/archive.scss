@@ -1,0 +1,50 @@
+.archive {
+  position: relative;
+  z-index: 10;
+
+  .archive-info {
+    display: flex;
+    margin-bottom: 2rem;
+    font-size: 1.0em;
+    line-height: 1em;
+
+    .archive-type {
+      color: $purple;
+    }
+
+    .archive-count {
+      position: relative;
+      margin-left: 3rem;
+      color: $color-text-secondary;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: -2rem;
+        top: 50%;
+        width: 1rem;
+        height: 1px;
+        background: $color-neutral-80;
+      }
+    }
+  }
+
+  .archive-title {
+    font-size: 3.5em;
+    line-height: 1em;
+    margin: 1rem 0;
+    color: $purple;
+  }
+
+  .archive-description {
+    display: block;
+    font-size: 0.8em;
+    line-height: 1.5em;
+    margin: 1rem 0;
+    color: $color-text-secondary;
+    @media (prefers-color-scheme: dark) {
+      color: $color-text-secondary-dark;
+    }
+  }
+
+}

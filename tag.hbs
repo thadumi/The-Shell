@@ -1,0 +1,42 @@
+{{!< default}}
+
+<article class="{{post_class}}">
+    <header class="post-header">
+        <a id="blog-logo" href="{{@site.url}}">
+            {{#if @site.logo}}
+            <img src="{{@site.logo}}" alt="Blog Logo" />
+            {{else}}
+            {{@site.title}}
+            {{/if}}
+        </a>
+    </header>
+
+    <div class="archive archive-tag">
+        <span class="archive-info">
+            <span class="archive-type">{{t "Topic"}}</span>
+            <span
+                class="archive-count">{{plural pagination.total empty=(t "No Posts") singular=(t "% Post") plural=(t "% Posts")}}</span>
+        </span>
+        <h2 class="archive-title">{{tag.name}}</h2>
+        {{#if tag.description}}
+        <span class="archive-description">{{{tag.description}}}</span>
+        {{/if}}
+    </div>
+</article>
+
+
+<main class="content" role="main">
+    {{#foreach posts}}
+        <article class="{{post_class}}">
+            <header class="post-header">
+                <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+            </header>
+            <section class="post-excerpt">
+                <p>{{excerpt}}&hellip;</p>
+            </section>
+        </article>
+    {{/foreach}}
+
+    {{pagination}}
+</main>
