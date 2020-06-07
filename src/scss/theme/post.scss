@@ -2,63 +2,163 @@
    5. Single Post - When you click on an individual post
    ========================================================================== */
 .post {
-    &-template .post {
-        margin-top: 0;
-        border-bottom: none;
-        padding-bottom: 0;
-        &:after {
-            display: none;
-        }
-        &-header {
-            padding: 60px 0;
-        }
+  &-template .post {
+    margin-top: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    &:after {
+      display: none;
     }
-    &-content img {
-        display: block;
-        max-width: 100%;
-        margin: 0 auto;
+    &-header {
+      padding: 60px 0;
     }
-    &-footer {
-        position: relative;
-        margin: 4rem 0 0 0;
-        padding: 4rem 0 0 0;
-        border-top: $border 1px solid;
-        h4 {
-            font-size: 1.8rem;
-            margin: 0;
-        }
-        p {
-            margin: 1rem 0;
-            font-size: 1.4rem;
-            line-height: 1.6em;
-        }
-        .author {
-            margin-right: 180px;
-        }
+  }
+  &-content img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  &-footer {
+    position: relative;
+    margin: 4rem 0 0 0;
+    padding: 4rem 0 0 0;
+    border-top: $border 1px solid;
+    h4 {
+      font-size: 1.8rem;
+      margin: 0;
     }
+    p {
+      margin: 1rem 0;
+      font-size: 1.4rem;
+      line-height: 1.6em;
+    }
+    .author {
+      margin-right: 180px;
+    }
+
+    &:after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+  }
+}
+
+.post-info-label {
+  margin-right: 0.75em;
+  font-size: 1em;
+  line-height: 3rem;
+  font-weight: 400;
+  color: $color-neutral-60;
+}
+
+.post-share {
+  position: relative;
+  max-width: 33.33333%;
+  float: right;
+  display: flex;
+  @media only screen and (max-width: $breakpoint-medium) {
+    max-width: none;
+    float: none;
+    margin-bottom: 2rem;
+  }
+}
+
+.post-share a {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.5em;
+  padding: 0;
+  font-size: 1em;
+  line-height: 3rem;
+  text-align: center;
+  text-decoration: none;
+  color: #B2B6BD;
+  border-radius: 2em;
+  transition: all ease 0.2s;
+  @media only screen and (max-width: $breakpoint-medium) {
+    margin-left: 0;
+    margin-right: 0.66667em;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: $purple;
+  }
+}
+
+.post-share a:last-child {
+  margin-right: 0;
+}
+
+.post-share a i {
+  color: inherit;
+
+  &:before {
+    width: auto;
+    height: auto;
+  }
+}
+
+.post-tags {
+  position: relative;
+  max-width: 66.66666%;
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 640px) {
+    max-width: none;
+    float: none;
+    margin-bottom: 2rem;
+  }
+}
+
+.post-tags a {
+  display: inline-block;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0 1.5rem;
+  background: $purple-2;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 3rem;
+  text-align: center;
+  text-decoration: none;
+  color: #B2B6BD;
+  border-radius: 2em;
+  transition: all ease 0.2s;
+  box-sizing: border-box;
+  white-space: nowrap;
+
+  &:focus,
+  &:hover {
+    background: $purple;
+    text-decoration: none;
+  }
 }
 
 /* ==========================================================================
    Reading Progress
    ========================================================================== */
-   .progress-container {
-	position: fixed;
-	width: 100%;
-	height: 4px;
-	left: 0;
-	top: 0;
-	z-index: 1000;
-	background: transparent;
-	transition: all ease-out 0.2s;
+.progress-container {
+  position: fixed;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: all ease-out 0.2s;
 
-	&.complete {
-		transform: translateY(-3px);
-	}
+  &.complete {
+    transform: translateY(-3px);
+  }
 }
 
 .progress-bar {
-	display: block;
-	width: 0;
-	height: 3px;
-    background: $contessa;
+  display: block;
+  width: 0;
+  height: 3px;
+  background: $contessa;
 }
