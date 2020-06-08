@@ -74,7 +74,7 @@
   line-height: 3rem;
   text-align: center;
   text-decoration: none;
-  color: #B2B6BD;
+  color: #b2b6bd;
   border-radius: 2em;
   transition: all ease 0.2s;
   @media only screen and (max-width: $breakpoint-medium) {
@@ -125,7 +125,7 @@
   line-height: 3rem;
   text-align: center;
   text-decoration: none;
-  color: #B2B6BD;
+  color: #b2b6bd;
   border-radius: 2em;
   transition: all ease 0.2s;
   box-sizing: border-box;
@@ -161,4 +161,165 @@
   width: 0;
   height: 3px;
   background: $contessa;
+}
+
+/* ==========================================================================
+   Post nav
+   ========================================================================== */
+.post-nav {
+  position: relative;
+  margin-top: 40px;
+  border-top: #424650 1px solid;
+  //border-bottom: 1px solid $color-border;
+  padding: 2rem 0 0 0;
+}
+
+.post-nav:after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  background: $color-border;
+  z-index: 2;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: none;
+  }
+}
+
+.post-nav-next,
+.post-nav-prev {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 50%;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    display: block;
+    width: 100%;
+  }
+
+  &:focus,
+  &:hover {
+    color: inherit;
+
+    i {
+      color: $color-primary-active;
+    }
+  }
+}
+
+.post-nav-next {
+  float: left;
+
+  .post-nav-teaser {
+    padding-right: 3rem;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-right: 0;
+    }
+  }
+}
+
+.post-nav-prev {
+  float: right;
+
+  .post-nav-teaser {
+    padding-left: 3rem;
+
+    @media only screen and (max-width: $breakpoint-medium) {
+      padding-left: 0;
+    }
+  }
+}
+
+.post-nav-teaser {
+  position: relative;
+  padding: 2rem 0;
+  min-height: 8rem;
+
+  @media only screen and (max-width: $breakpoint-medium) {
+    min-height: 4em;
+    padding: 2em 0;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 1px;
+      left: 0;
+      bottom: 0;
+      margin-bottom: -1px;
+      background: $color-border;
+      z-index: 2;
+      @media (prefers-color-scheme: dark) {
+        background: $color-border-dark;
+      }
+    }
+  }
+}
+
+.post-nav i {
+  position: absolute;
+  top: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin-top: -2rem;
+  font-size: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  transition: all ease-out 0.2s;
+  color: $color-border;
+
+  &:before {
+    margin: 0;
+    width: auto;
+  }
+}
+
+.post-nav-next i {
+  left: 0;
+  margin-left: -4rem;
+}
+
+.post-nav-prev i {
+  right: 0;
+  margin-right: -4rem;
+}
+
+.post-nav-title {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  font-size: 1em;
+  line-height: 3rem;
+  color: inherit;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $heading;
+}
+
+.post-nav-excerpt {
+  height: 5rem;
+  margin: 0 0 1rem;
+  //font-family: "Cardo", serif;
+  font-size: 0.75em;
+  line-height: 2.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $text;
+}
+
+.post-nav-meta {
+  margin: 0;
+  font-size: 1em;
+  line-height: 2rem;
+  color: $purple;
 }
