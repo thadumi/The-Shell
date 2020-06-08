@@ -107,20 +107,20 @@
         display: inline-block;
         margin: 0 0 5px 0;
         font-size: 1.5rem;
-        color: #846d8f;
+        color: $text-2;
     }
      a {
-        color: #846d8f;
+        color: $text-2;
         text-decoration: none;
         &:hover {
             text-decoration: underline;
-            color: lighten(#846d8f, 10%);
+            color: lighten($text-2, 10%);
         }
     }
 
     &-header {
         a {
-            color: $contessa;
+            color: $catches-the-eye;
             transition: color ease 0.3s;
             &:hover {
                 color: $selection-background-and-link-hover;

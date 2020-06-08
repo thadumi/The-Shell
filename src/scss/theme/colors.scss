@@ -1,24 +1,40 @@
-$text: #B2B6BD;
-$background: #2b303b;
-$selection-text-and-header-background: #1c212b;
-$selection-background-and-link-hover: #a3be8c;
-$heading: #739a99;
-$border: #424650;
+// Main color pallet
+$color1: #1c212b;
+$color2: #2b303b;
+$color3: #4f586b; //424650
+$color4: #a3be8c;
+$color5: #739a99;
+$color6: #bf6165; 
+$color7: #846d8f;
 
-$contessa: #bf6165;
-$comet: #4f586b;
-$river-bed: #424a5a;
+// General
 
-$purple: #846d8f;
-$purple-2: #685771;
+$text: #b2b6bd;
+$text-2: $color7;
 
+$heading: $color5;
+
+$catches-the-eye: $color6;
+
+$background: $color2;
+$selection-text-and-header-background: $color1;
+$selection-background-and-link-hover: $color4;
+$input-background: $color3;
+$border: $color3;
+
+// customs
+$code-background: $color3;
+
+$footer-link-text: $color5;
+$footer-link-hover: $color4;
+
+
+$ok-color: $color4;
+$error-color: $color6;
+
+
+$purple: #866f8c;
+$purple-2: #866f8c;
+
+// Extra
 $silver: #ccc;
-
-
-$color1: #19222b;
-$color2: #333d49;
-$color3: #4c596a;
-$color4: #a0bd8f;
-$color5: #699999;
-$color6: #cb6066;
-$color7: #866f8c;

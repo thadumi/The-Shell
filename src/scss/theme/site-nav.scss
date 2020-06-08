@@ -201,7 +201,7 @@
       padding: 0 1rem;
       margin-left: -1rem;
       margin-top: -2rem;
-      background: #bf6165;
+      background: $catches-the-eye;
       @media only screen and (max-width: $breakpoint-medium) {
         left: 0;
         top: 50%;
@@ -215,7 +215,7 @@
     }
 
     a {
-      color: #bf6165;
+      color: $catches-the-eye;
       font-weight: 500;    
     }
   }
@@ -252,7 +252,7 @@
 
     &:focus,
     &:hover {
-      color: #bf6165;
+      color: $catches-the-eye;
     }
   }
 
@@ -283,7 +283,7 @@
 
     &:focus,
     &:hover {
-      color:#bf6165;
+      color: $catches-the-eye;
     }
   }
 

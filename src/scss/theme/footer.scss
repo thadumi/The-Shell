@@ -10,21 +10,21 @@
     border-top: #1a1e27 1px solid;
     font-size: 1.3rem;
     line-height: 1.7em;
-    color: #BBC7CC;
+    color: $text;
     text-align: center;
     background: $selection-text-and-header-background;
     a {
-        color: #BBC7CC;
+        color: $footer-link-text;
         text-decoration: underline;
         &:hover {
-            color: #50585D;
+            color: $footer-link-hover;
         }
     }
 }
 
 .poweredby {
     .icon-ghost {
-        color: $contessa;
+        color: $catches-the-eye;
         font-weight: 700;
         text-decoration: none;
         &:hover {
@@ -37,6 +37,7 @@
     }
 }
 
+/*
 .subscribe {
     width: 28px;
     height: 28px;
@@ -71,6 +72,7 @@
         }
     }
 }
+*/
 
 .tooltip {
     opacity:0;

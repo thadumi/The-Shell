@@ -74,7 +74,7 @@ h6 {
 }
 
 a {
-    color: $contessa;
+    color: $catches-the-eye;
     transition: color ease 0.3s;
     &:hover {
         color: $selection-background-and-link-hover;
@@ -105,7 +105,7 @@ blockquote {
     box-sizing: border-box;
     margin: 1.6em 0 1.6em -2.2em;
     padding: 0 0 0 1.6em;
-    border-left: $comet 0.4em solid;
+    border-left: $border 0.4em solid;
     p {
         margin: 0.8em 0;
         font-style: italic;
@@ -158,8 +158,8 @@ code, tt {
     padding: 4px 8px;
     font-family: "Courier New", Courier, monospace;
     font-size: 0.75em;
-    background: $comet;
-    border: 1px solid $river-bed;
+    background: $code-background;
+    border: 1px solid lighten($color: $code-background, $amount: 10%);
     top: -2px;
     white-space: pre-wrap;
     border-radius: 2px;
@@ -257,7 +257,7 @@ table td {
     line-height: 20px;
     text-align: left;
     vertical-align: top;
-    border-top: 1px solid $river-bed;
+    border-top: 1px solid $border;
 }
 
 table th { color: #000; }
@@ -277,7 +277,7 @@ table table table { background-color: #fff; }
 
 table tbody > tr:nth-child(odd) > td,
 table tbody > tr:nth-child(odd) > th {
-    background-color: $comet;
+    background-color: $input-background;
 }
 
 table.plain {
@@ -289,9 +289,9 @@ table.plain {
 
 
 button, input, select, textarea {
-    background: $comet;
-    border: 1px solid $river-bed;
+    background: $input-background;
+    border: 1px solid lighten($input-background, 10%);
     color: $text;
-    outline-color: $contessa
+    outline-color: $error-color;
 
 }
