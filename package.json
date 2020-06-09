@@ -1,8 +1,8 @@
 {
-    "name": "the-shell",
+    "name": "arise-in-the-shell",
     "description": "Theme for Ghost which use 'Ghost in The Shell' animation series palette colors",
     "demo": "thadumi.com",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "engines": {
         "ghost": ">=3.0.0",
         "ghost-api": "v3"
@@ -34,9 +34,9 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/thadumi/ghost-shell-theme.git"
+        "url": "https://github.com/thadumi/arise-in-the-shell.git"
     },
-    "bugs": "https://github.com/thadumi/ghost-shell-theme/issues",
+    "bugs": "https://github.com/thadumi/arise-in-the-shell/issues",
     "devDependencies": {
         "browser-sync": "^2.26.3",
         "gulp": "^4.0.0",
