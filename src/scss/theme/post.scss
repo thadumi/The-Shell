@@ -11,10 +11,17 @@
     &:after {
       display: none;
     }
+    /*
     &-header {
       padding: 60px 0;
     }
+    */
   }
+
+  &-header {
+    padding: 60px 0;
+  }
+
   &-content img {
     display: block;
     max-width: 100%;

@@ -28,15 +28,15 @@
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
-        {{! Everything below outputs content of the the post which has been published }}
-        <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
-            {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
+            {{! Everything below outputs content of the the post which has been published }}
+            <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
+                {{#if tags}}on {{tags separator=" | "}}{{/if}}</span>
 
-        <h1 class="post-title">{{{title}}}</h1>
+            <h1 class="post-title">{{{title}}}</h1>
 
-        <section class="post-content">
-            {{content}}
-        </section>
+            <section class="post-content">
+                {{content}}
+            </section>
 
             {{#is "post"}}
                 <footer class="post-footer">
@@ -69,18 +69,18 @@
                             <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
                         </a>
                     </div>
-                    <!--
-                            {{#if primary_author}}
-                            <section class="author">
-                                <h4>{{primary_author.name}}</h4>
-                                <p>{{primary_author.bio}}</p>
-                            </section>
-                            {{/if}}
-                            -->
+                     <!--
+                        {{#if primary_author}}
+                        <section class="author">
+                            <h4>{{primary_author.name}}</h4>
+                            <p>{{primary_author.bio}}</p>
+                        </section>
+                        {{/if}}
+                    -->
                 </footer>
-            {{/is}}
 
-            {{> next-post}}
+                {{> next-post}}
+            {{/is}}
         {{/post}}
 
     </article>
