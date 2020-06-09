@@ -4,8 +4,10 @@
 .post {
   &-template .post {
     //margin-top: 0;
-    border-bottom: none;
-    padding-bottom: 0;
+    border-bottom: #424650 1px solid;
+    //padding-bottom: 0;
+    margin: 4rem auto;
+
     &:after {
       display: none;
     }

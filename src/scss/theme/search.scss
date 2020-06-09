@@ -9,19 +9,14 @@
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-  background: $color-background;
+  background: $color1;
   display: none;
-  @media (prefers-color-scheme: dark) {
-    background: $color-background-dark;
-  }
+
   @media only screen and (max-width: $breakpoint-medium) {
     display: block;
     transition: all ease-out 0.3s;
     transform: translate3d(0, 100%, 0);
-    border-top: 1px solid $color-border;
-    @media (prefers-color-scheme: dark) {
-      border-color: $color-border-dark;
-    }
+    border-top: 1px solid $border;
   }
 
   #results {
@@ -51,19 +46,15 @@
     margin: -0.5rem 0;
     padding: 0 2rem;
     border-radius: 5rem;
-    border: 1px solid $color-border;
-    background: $color-background;
+    border: 1px solid $border;
+    background: $color1;
     box-sizing: border-box;
     box-shadow: none !important;
     outline: 0 !important;
-    @media (prefers-color-scheme: dark) {
-      border-color: $color-border-dark;
-      background: $color-background-dark;
-    }
 
     &:focus,
     &:hover {
-      border-color: $color-primary-active;
+      border-color: $color-active;
     }
   }
 
@@ -83,14 +74,11 @@
   width: 4rem;
   height: 4rem;
   margin: 2rem;
-  border: 1px solid $color-neutral-80;
+  border: 1px solid $border;
   border-radius: 4rem;
   box-sizing: border-box;
   cursor: pointer;
   transition: all ease-out 0.1s;
-  @media (prefers-color-scheme: dark) {
-    border-color: $color-neutral-60;
-  }
 
   &:after,
   &:before {
@@ -102,11 +90,8 @@
     height: 2px;
     margin-top: -1px;
     border-radius: 2px;
-    background: $color-neutral-60;
+    background: $background;
     transition: all ease-out 0.1s;
-    @media (prefers-color-scheme: dark) {
-      background: $color-neutral-80;
-    }
   }
 
   &:after {
@@ -119,11 +104,11 @@
 
   &:focus,
   &:hover {
-    border-color: $color-primary-active;
+    border-color: $color-active;
 
     &:after,
     &:before {
-      background: $color-primary-active;
+      background: $color-active;
     }
   }
 }
