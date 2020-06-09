@@ -76,9 +76,10 @@
   line-height: 3rem;
   text-align: center;
   text-decoration: none;
-  color: #b2b6bd;
+  color: $color4; // #b2b6bd;
   border-radius: 2em;
   transition: all ease 0.2s;
+
   @media only screen and (max-width: $breakpoint-medium) {
     margin-left: 0;
     margin-right: 0.66667em;
@@ -86,7 +87,8 @@
 
   &:focus,
   &:hover {
-    background-color: $purple;
+    color: $color1;
+    background-color: $color4;
   }
 }
 
@@ -109,6 +111,7 @@
   float: left;
   display: flex;
   flex-wrap: wrap;
+  
   @media only screen and (max-width: 640px) {
     max-width: none;
     float: none;
@@ -121,13 +124,13 @@
   margin-right: 0.5em;
   margin-bottom: 0.5em;
   padding: 0 1.5rem;
-  background: $purple-2;
+  background: $color3;
   font-size: 1em;
   font-weight: 500;
   line-height: 3rem;
   text-align: center;
   text-decoration: none;
-  color: #b2b6bd;
+  color: $text;
   border-radius: 2em;
   transition: all ease 0.2s;
   box-sizing: border-box;
@@ -135,7 +138,8 @@
 
   &:focus,
   &:hover {
-    background: $purple;
+    color: $color1;
+    background: $color5;
     text-decoration: none;
   }
 }

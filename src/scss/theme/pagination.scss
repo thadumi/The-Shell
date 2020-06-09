@@ -10,12 +10,12 @@
     margin: 4rem auto;
     font-family: "Courier New", Courier, monospace;
     font-size: 1.3rem;
-    color: #9EABB3;
+    color: $color5;
     text-align: center;
     a {
-        color: #9EABB3;
+        color: $color5;
         &:hover {
-            color: lighten(#9EABB3, 5%);
+            color: lighten($color5, 5%);
             transition: all ease 800ms;
         }
     }
@@ -49,5 +49,5 @@
 
 .older-posts:hover,
 .newer-posts:hover {
-    border-color: #9EABB3;
+    border-color: $color5;
 }
