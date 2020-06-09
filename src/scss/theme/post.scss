@@ -180,8 +180,8 @@
   width: 1px;
   height: 100%;
   left: 50%;
-  top: 0;
-  background: $color-border;
+  top: 10px;
+  background: $border;
   z-index: 2;
 
   @media only screen and (max-width: $breakpoint-medium) {
@@ -193,8 +193,8 @@
 .post-nav-prev {
   text-decoration: none;
   color: inherit;
-  display: block;
-  width: 50%;
+  display: inline-block;
+  width: 49%;
 
   @media only screen and (max-width: $breakpoint-medium) {
     display: block;
@@ -206,13 +206,12 @@
     color: inherit;
 
     i {
-      color: $color-primary-active;
+      color: $catches-the-eye;
     }
   }
 }
 
 .post-nav-next {
-  float: left;
 
   .post-nav-teaser {
     padding-right: 3rem;
@@ -224,7 +223,6 @@
 }
 
 .post-nav-prev {
-  float: right;
 
   .post-nav-teaser {
     padding-left: 3rem;
@@ -233,6 +231,10 @@
       padding-left: 0;
     }
   }
+
+  /*&:after {
+    content: "";
+  }*/
 }
 
 .post-nav-teaser {
@@ -252,11 +254,8 @@
       left: 0;
       bottom: 0;
       margin-bottom: -1px;
-      background: $color-border;
+      background: $border;
       z-index: 2;
-      @media (prefers-color-scheme: dark) {
-        background: $color-border-dark;
-      }
     }
   }
 }
@@ -271,7 +270,7 @@
   line-height: 4rem;
   text-align: center;
   transition: all ease-out 0.2s;
-  color: $color-border;
+  color: $border;
 
   &:before {
     margin: 0;
