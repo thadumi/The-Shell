@@ -17,7 +17,7 @@
   {{#get 'tags' limit='all' include='count.posts'}}
   {{#foreach tags}}
         <article class="{{post_class}}">
-            <header class="post-header">
+            <header class="post-header" style="padding: 0;">
                 <span class="post-meta">{{ count.posts }} posts</span>
                 <h2 class="post-title"><a href="{{url}}">{{{name}}}</a></h2>
             </header>
